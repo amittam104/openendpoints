@@ -1,0 +1,13 @@
+# Current Context
+
+## Current State
+
+The project is in its initial phase. It is a new Next.js application generated with `create-next-app`. The basic setup for authentication with `better-auth` and database with `Prisma` and `MongoDB` is in place. The data models for `Workspace`, `Project`, and `Endpoint` have been implemented in the Prisma schema, and type mismatch issues have been resolved. The UI is the default Next.js starter page.
+
+## Next Steps
+
+The immediate next steps involve building the core features of the application as defined in the MVP. This includes:
+
+1.  Creating the UI for the simple endpoint builder.
+2.  Developing the project workspace to manage projects and endpoints.
+3.  Implementing the three output formats (Cards, Markdown, YAML).
