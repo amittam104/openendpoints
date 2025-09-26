@@ -46,7 +46,7 @@ export default function Home() {
       <section className="my-20 border-y border-border grid grid-cols-1 lg:grid-cols-2 gap-0">
         {/* Left column - Standard Setup */}
         <div className="border-r border-border">
-          <div className="bg-background">
+          <div className="bg-background h-full flex flex-col justify-between">
             <div className="border-b border-border p-6">
               <h2 className="text-xl font-bold mb-1">Standard Setup</h2>
               <p className="text-sm text-muted-foreground">
@@ -98,7 +98,7 @@ export default function Home() {
 
         {/* Right column - Quick Start for non-signed-in users */}
         <div>
-          <div className="bg-background h-full">
+          <div className="bg-background h-full flex flex-col justify-between">
             <div className="border-b border-border p-6">
               <h2 className="text-xl font-bold mb-1">Quick Start</h2>
               <p className="text-sm text-muted-foreground">
@@ -137,7 +137,7 @@ export default function Home() {
                 <span className="text-base">Copy and use immediately</span>
               </div>
             </div>
-            <div className="px-6 py-3 border-t border-border bg-muted/50">
+            <div className="px-6 py-3 h-auto border-t border-border bg-muted/50">
               <p className="text-xs text-muted-foreground">
                 * You&apos;ll miss out on project saving, sharing, and
                 management features
