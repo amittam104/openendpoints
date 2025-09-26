@@ -20,10 +20,19 @@ function RootHeader() {
         {/* Brand - left */}
         <Link
           href="/"
-          className="group flex items-center gap-2 hover:bg-accent/50"
+          className="group flex items-center px-3 py-auto h-full border-r border-border gap-2 hover:bg-accent/50 delay-75 duration-300 ease-in-out"
           aria-label="OpenEndpoints home"
         >
-          <Image src="/logo.png" alt="OpenEndpoints" width={100} height={100} />
+          {currentTheme === "dark" ? (
+            <Image
+              src="/logo-dark.svg"
+              alt="OpenEndpoints"
+              width={40}
+              height={40}
+            />
+          ) : (
+            <Image src="/logo.svg" alt="OpenEndpoints" width={40} height={40} />
+          )}
         </Link>
 
         {/* Right actions */}
@@ -31,27 +40,27 @@ function RootHeader() {
           <Link
             href="#"
             aria-label="GitHub"
-            className="h-full border-x border-border px-3 flex items-center hover:bg-accent/50"
+            className="h-full border-x border-border px-3 flex items-center hover:bg-accent/50 delay-75 duration-300 ease-in-out"
           >
             <GithubLogoIcon size={20} weight="duotone" />
           </Link>
           <Link
             href="/changelog"
-            className="border-r border-border px-3 h-full flex items-center hover:bg-accent/50"
+            className="border-r border-border px-3 h-full flex items-center hover:bg-accent/50 delay-75 duration-300 ease-in-out"
           >
             Changelog
           </Link>
 
           <Link
             href="/signup"
-            className="border-r border-border px-3 h-full flex items-center hover:bg-accent/50"
+            className="border-r border-border px-3 h-full flex items-center hover:bg-accent/50 delay-75 duration-300 ease-in-out"
           >
             Sign up
           </Link>
 
           <Link
             href="/endpoint/new"
-            className="border-r border-border px-3 h-full flex items-center hover:bg-accent/50"
+            className="border-r border-border px-3 h-full flex items-center hover:bg-foreground hover:text-background delay-75 duration-300 ease-in-out"
           >
             Create endpoint
           </Link>
@@ -61,7 +70,7 @@ function RootHeader() {
               setTheme((prev) => (prev === "light" ? "dark" : "light"))
             }
             aria-label="Toggle theme"
-            className="px-3 py-auto h-full flex items-center cursor-pointer hover:bg-accent/50"
+            className="px-3 py-auto h-full flex items-center cursor-pointer hover:bg-accent/50 delay-75 duration-300 ease-in-out"
           >
             {currentTheme === "light" ? (
               <SunDimIcon size={20} weight="duotone" />
