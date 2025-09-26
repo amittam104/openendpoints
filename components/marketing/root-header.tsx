@@ -1,5 +1,6 @@
 "use client";
 
+import { signOut, useSession } from "@/lib/auth-client";
 import { GithubLogoIcon, MoonIcon, SunDimIcon } from "@phosphor-icons/react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
@@ -9,6 +10,7 @@ import { useEffect, useState } from "react";
 function RootHeader() {
   const { theme, setTheme } = useTheme();
   const [currentTheme, setCurrentTheme] = useState("system");
+  const { data: session } = useSession();
 
   useEffect(() => {
     setCurrentTheme((theme === "system" ? "light" : theme) || "light");
@@ -51,12 +53,21 @@ function RootHeader() {
             Changelog
           </Link>
 
-          <Link
-            href="/signup"
-            className="border-r border-border px-3 h-full flex items-center hover:bg-accent/50 delay-75 duration-300 ease-in-out"
-          >
-            Sign up
-          </Link>
+          {session ? (
+            <button
+              onClick={() => signOut()}
+              className="cursor-pointer border-r border-border px-3 h-full flex items-center hover:bg-accent/50 delay-75 duration-300 ease-in-out"
+            >
+              Log out
+            </button>
+          ) : (
+            <Link
+              href="/signup"
+              className="border-r border-border px-3 h-full flex items-center hover:bg-accent/50 delay-75 duration-300 ease-in-out"
+            >
+              Sign up
+            </Link>
+          )}
 
           <Link
             href="/endpoint/new"
