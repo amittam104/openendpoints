@@ -33,7 +33,6 @@ I want to build an open-source app. The idea is developer (Especially Frontend) 
 - Complex data type validation
 - Authentication/authorization for APIs
 - Error code definitions
-- Query parameters (just focus on body)
 - Team collaboration features
 - Comments/feedback system
 - OpenAPI compatibility

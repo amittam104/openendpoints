@@ -1,103 +1,260 @@
-import Image from "next/image";
+import {
+  PuzzlePieceIcon,
+  FolderIcon,
+  CardsIcon,
+  NotePencilIcon,
+  FileTextIcon,
+  LockIcon,
+  GithubLogoIcon,
+  XLogoIcon,
+} from "@phosphor-icons/react/ssr";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="mx-auto max-w-6xl text-foreground border pt-14">
+      <header className="mt-10 text-center">
+        <h1
+          className="text-7xl font-bold tracking-widest"
+          style={{ fontFamily: "var(--font-pixelify-sans)" }}
+        >
+          OpenEndpoints
+        </h1>
+        <p className="mt-2 text-base text-muted-foreground">
+          Define and share API endpoint specifications quickly and clearly
+        </p>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+      <section className="mt-10 border-t border-border bg-background">
+        {/* Top bar with left GET STARTED tab and right command */}
+        <div className="flex items-stretch border-b border-border">
+          <button className="px-3 text-sm font-bold border-r border-border bg-background text-foreground">
+            GET STARTED
+          </button>
+          <p className="px-3 py-3">Create your first endpoint</p>
+          <div className="flex-1 flex items-center justify-end gap-2">
+            <button
+              className="cursor-pointer px-3 py-3 border-l bg-accent hover:bg-foreground hover:text-background delay-75 duration-300 ease-in-out"
+              aria-label="Copy command"
+            >
+              Create Endpoint
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Two-column layout */}
+      <section className="my-20 border-y border-border grid grid-cols-1 lg:grid-cols-2 gap-0">
+        {/* Left column - Standard Setup */}
+        <div className="border-r border-border">
+          <div className="bg-background">
+            <div className="border-b border-border p-6">
+              <h2 className="text-xl font-bold mb-1">Standard Setup</h2>
+              <p className="text-sm text-muted-foreground">
+                Sign up and get started
+              </p>
+            </div>
+            <div className="p-6 space-y-4">
+              <div className="flex items-center gap-4">
+                <span className="w-8 h-8 flex items-center justify-center bg-muted border border-border rounded-full text-sm font-bold text-muted-foreground">
+                  1
+                </span>
+                <span className="text-base">
+                  Sign up and create your workspace
+                </span>
+              </div>
+              <div className="flex items-center gap-4">
+                <span className="w-8 h-8 flex items-center justify-center bg-muted border border-border rounded-full text-sm font-bold text-muted-foreground">
+                  2
+                </span>
+                <span className="text-base">Create your first project</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <span className="w-8 h-8 flex items-center justify-center bg-muted border border-border rounded-full text-sm font-bold text-muted-foreground">
+                  3
+                </span>
+                <span className="text-base">
+                  Add API endpoints with simple forms
+                </span>
+              </div>
+              <div className="flex items-center gap-4">
+                <span className="w-8 h-8 flex items-center justify-center bg-muted border border-border rounded-full text-sm font-bold text-muted-foreground">
+                  4
+                </span>
+                <span className="text-base">
+                  Generate cards, markdown, or YAML exports
+                </span>
+              </div>
+              <div className="flex items-center gap-4">
+                <span className="w-8 h-8 flex items-center justify-center bg-muted border border-border rounded-full text-sm font-bold text-muted-foreground">
+                  5
+                </span>
+                <span className="text-base">
+                  Share specifications with your backend team
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right column - Quick Start for non-signed-in users */}
+        <div>
+          <div className="bg-background h-full">
+            <div className="border-b border-border p-6">
+              <h2 className="text-xl font-bold mb-1">Quick Start</h2>
+              <p className="text-sm text-muted-foreground">
+                No sign-in required
+              </p>
+            </div>
+            <div className="p-6 space-y-4">
+              <div className="flex items-center gap-4">
+                <span className="w-8 h-8 flex items-center justify-center bg-muted border border-border rounded-full text-sm font-bold text-muted-foreground">
+                  1
+                </span>
+                <span className="text-base">
+                  Create endpoints without signing in
+                </span>
+              </div>
+              <div className="flex items-center gap-4">
+                <span className="w-8 h-8 flex items-center justify-center bg-muted border border-border rounded-full text-sm font-bold text-muted-foreground">
+                  2
+                </span>
+                <span className="text-base">
+                  Build your API specifications instantly
+                </span>
+              </div>
+              <div className="flex items-center gap-4">
+                <span className="w-8 h-8 flex items-center justify-center bg-muted border border-border rounded-full text-sm font-bold text-muted-foreground">
+                  3
+                </span>
+                <span className="text-base">
+                  Export as cards, markdown, or YAML
+                </span>
+              </div>
+              <div className="flex items-center gap-4">
+                <span className="w-8 h-8 flex items-center justify-center bg-muted border border-border rounded-full text-sm font-bold text-muted-foreground">
+                  4
+                </span>
+                <span className="text-base">Copy and use immediately</span>
+              </div>
+            </div>
+            <div className="px-6 py-3 border-t border-border bg-muted/50">
+              <p className="text-xs text-muted-foreground">
+                * You&apos;ll miss out on project saving, sharing, and
+                management features
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features section - full width */}
+      <section className=" grid grid-cols-1 md:grid-cols-3 gap-0">
+        <div className="border-t border-border p-8 hover:bg-accent/50 delay-75 duration-300 ease-in-out bg-background">
+          <div className="flex items-center gap-2 text-sm uppercase text-muted-foreground mb-1">
+            <PuzzlePieceIcon className="w-4 h-4" weight="duotone" />
+            SIMPLE
+          </div>
+          <div className="flex items-start justify-between">
+            <h3 className="font-semibold text-lg">
+              Create API endpoints with ease
+            </h3>
+          </div>
+          <p className="mt-2 text-base text-muted-foreground">
+            Minimal form for name, method, path, and JSON examples.
+          </p>
+        </div>
+
+        <div className="border-t border-x border-border p-8 hover:bg-accent/50 delay-75 duration-300 ease-in-out bg-background">
+          <div className="flex items-center gap-1 text-sm  uppercase text-muted-foreground mb-1">
+            <FolderIcon className="w-4 h-4" weight="duotone" />
+            ORGANIZE
+          </div>
+          <div className="flex items-start justify-between">
+            <h3 className="font-semibold text-lg">
+              Manage projects efficiently
+            </h3>
+          </div>
+          <p className="mt-2 text-base text-muted-foreground">
+            Create projects and organize multiple endpoints per app.
+          </p>
+        </div>
+
+        <div className="border-t border-border p-8 hover:bg-accent/50 delay-75 duration-300 ease-in-out bg-background">
+          <div className="flex items-center gap-1 text-sm  uppercase text-muted-foreground mb-1">
+            <CardsIcon className="w-4 h-4" weight="duotone" />
+            VISUAL
+          </div>
+          <div className="flex items-start justify-between">
+            <h3 className="font-semibold text-lg">View endpoints as cards</h3>
+          </div>
+          <p className="mt-2 text-base text-muted-foreground">
+            Clean visual cards summarizing each endpoint specification.
+          </p>
+        </div>
+
+        <div className="border-t border-border p-8 hover:bg-accent/50 delay-75 duration-300 ease-in-out bg-background">
+          <div className="flex items-center gap-1 text-sm  uppercase text-muted-foreground mb-1">
+            <NotePencilIcon className="w-4 h-4" weight="duotone" />
+            EXPORT
+          </div>
+          <div className="flex items-start justify-between">
+            <h3 className="font-semibold text-lg">Generate markdown docs</h3>
+          </div>
+          <p className="mt-2 text-base text-muted-foreground">
+            Copy‑pasteable docs ready for GitHub READMEs and wikis.
+          </p>
+        </div>
+
+        <div className="border-t border-x border-border p-8 hover:bg-accent/50 delay-75 duration-300 ease-in-out bg-background">
+          <div className="flex items-center gap-1 text-sm  uppercase text-muted-foreground mb-1">
+            <FileTextIcon className="w-4 h-4" weight="duotone" />
+            EXPORT
+          </div>
+          <div className="flex items-start justify-between">
+            <h3 className="font-semibold text-lg">Export YAML format</h3>
+          </div>
+          <p className="mt-2 text-base text-muted-foreground">
+            Simple YAML format for quick sharing or tooling.
+          </p>
+        </div>
+
+        <div className="border-t border-border p-8 hover:bg-accent/50 delay-75 duration-300 ease-in-out bg-background">
+          <div className="flex items-center gap-1 text-sm  uppercase text-muted-foreground mb-1">
+            <LockIcon className="w-4 h-4" weight="duotone" />
+            SECURE
+          </div>
+          <div className="flex items-start justify-between">
+            <h3 className="font-semibold text-lg">Save with GitHub auth</h3>
+          </div>
+          <p className="mt-2 text-base text-muted-foreground">
+            Sign in with GitHub to save and manage your projects.
+          </p>
+        </div>
+      </section>
+
+      {/* Footer section */}
+      <footer className="border-t border-border bg-background">
+        <div className="flex items-stretch">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
+            className="flex-1 flex items-center justify-center gap-3 text-muted-foreground hover:text-foreground transition-colors py-8 border-r border-border"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            <GithubLogoIcon className="w-6 h-6" weight="duotone" />
+            <span className="text-base font-medium">GitHub</span>
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://x.com"
             target="_blank"
             rel="noopener noreferrer"
+            className="flex-1 flex items-center justify-center gap-3 text-muted-foreground hover:text-foreground transition-colors py-8"
           >
-            Read our docs
+            <XLogoIcon className="w-6 h-6" weight="duotone" />
+            <span className="text-base font-medium">X</span>
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
       </footer>
-    </div>
+    </main>
   );
 }
