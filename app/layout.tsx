@@ -3,7 +3,7 @@ import { Roboto } from "next/font/google";
 import { Pixelify_Sans } from "next/font/google";
 import "./globals.css";
 import RootHeader from "@/components/marketing/root-header";
-import { ThemeProvider } from "@/components/common/theme-provider";
+import { Providers } from "@/components/common/providers";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -31,15 +31,10 @@ export default function RootLayout({
       <body
         className={`${roboto.className} ${pixelifySans.variable} antialiased h-screen overflow-y-auto`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <Providers>
           <RootHeader />
           {children}
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );
