@@ -68,7 +68,7 @@ export default function SignUp() {
                   await signIn.social(
                     {
                       provider: "google",
-                      callbackURL: "/workspaces",
+                      callbackURL: "/workspace",
                     },
                     {
                       onRequest: () => {
