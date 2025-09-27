@@ -14,7 +14,8 @@ import { useState } from "react";
 import { GithubLogoIcon, GoogleLogoIcon } from "@phosphor-icons/react/ssr";
 
 export default function SignUp() {
-  const [loading, setLoading] = useState(false);
+  const [loadingGithub, setLoadingGithub] = useState(false);
+  const [loadingGoogle, setLoadingGoogle] = useState(false);
 
   return (
     <div className="min-h-screen max-w-md flex items-center justify-center mx-auto">
@@ -38,50 +39,50 @@ export default function SignUp() {
               <Button
                 variant="outline"
                 className={cn("w-full gap-2")}
-                disabled={loading}
+                disabled={loadingGithub}
                 onClick={async () => {
                   await signIn.social(
                     {
                       provider: "github",
-                      callbackURL: "/workspaces",
+                      callbackURL: "/workspace",
                     },
                     {
                       onRequest: () => {
-                        setLoading(true);
+                        setLoadingGithub(true);
                       },
                       onResponse: () => {
-                        setLoading(false);
+                        setLoadingGithub(false);
                       },
                     }
                   );
                 }}
               >
                 <GithubLogoIcon className="w-4 h-4" weight="duotone" />
-                Sign up with Github
+                {loadingGithub ? "Signing up..." : "Sign up with Github"}
               </Button>
               <Button
                 variant="outline"
                 className={cn("w-full gap-2")}
-                disabled={loading}
+                disabled={loadingGoogle}
                 onClick={async () => {
                   await signIn.social(
                     {
                       provider: "google",
-                      callbackURL: "/workspaces",
+                      callbackURL: "/workspace",
                     },
                     {
                       onRequest: () => {
-                        setLoading(true);
+                        setLoadingGoogle(true);
                       },
                       onResponse: () => {
-                        setLoading(false);
+                        setLoadingGoogle(false);
                       },
                     }
                   );
                 }}
               >
                 <GoogleLogoIcon className="w-4 h-4" weight="duotone" />
-                Sign up with Google
+                {loadingGoogle ? "Signing up..." : "Sign up with Google"}
               </Button>
             </div>
           </div>

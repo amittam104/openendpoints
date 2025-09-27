@@ -8,6 +8,7 @@ The project is in its initial phase. It is a new Next.js application generated w
 
 The immediate next steps involve building the core features of the application as defined in the MVP. This includes:
 
-1.  Creating the UI for the simple endpoint builder.
-2.  Developing the project workspace to manage projects and endpoints.
-3.  Implementing the three output formats (Cards, Markdown, YAML).
+1.  Finalizing the route structure (completed).
+2.  Creating the UI for the simple endpoint builder.
+3.  Developing the project workspace to manage projects and endpoints.
+4.  Implementing the three output formats (Cards, Markdown, YAML).

@@ -6,11 +6,13 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 function RootHeader() {
   const { theme, setTheme } = useTheme();
   const [currentTheme, setCurrentTheme] = useState("system");
   const { data: session } = useSession();
+  const router = useRouter();
 
   useEffect(() => {
     setCurrentTheme((theme === "system" ? "light" : theme) || "light");
@@ -55,7 +57,10 @@ function RootHeader() {
 
           {session ? (
             <button
-              onClick={() => signOut()}
+              onClick={() => {
+                signOut();
+                router.push("/");
+              }}
               className="cursor-pointer border-r border-border px-3 h-full flex items-center hover:bg-accent/50 delay-75 duration-300 ease-in-out"
             >
               Log out
