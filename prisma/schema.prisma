@@ -83,6 +83,7 @@ model Workspace{
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId String
   projects Project[]
+  endpoints Endpoint[]
   
   @@map("workspace")
 }
@@ -95,6 +96,29 @@ model Project{
   updatedAt DateTime @default(now()) @updatedAt
   workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
   workspaceId String @db.ObjectId
+  endpoints Endpoint[]
   
   @@map("project")
+}
+
+model Endpoint{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  path String
+  method String
+  description String
+  queryParams String[]
+  pathParams String[]
+  headers String[]
+  requestBody String
+  responseBody String
+  statusCode Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  workspaceId String @db.ObjectId
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  projectId String @db.ObjectId
+  
+  @@map("endpoint")
 }

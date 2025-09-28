@@ -74,6 +74,18 @@ function RootHeader() {
             </Link>
           )}
 
+          {session && (
+            <button
+              onClick={() => {
+                signOut();
+                router.push("/workspace");
+              }}
+              className="cursor-pointer border-r border-border px-3 h-full flex items-center hover:bg-accent/50 delay-75 duration-300 ease-in-out"
+            >
+              Workspace
+            </button>
+          )}
+
           <Link
             href="/endpoint/new"
             className="border-r border-border px-3 h-full flex items-center hover:bg-foreground hover:text-background delay-75 duration-300 ease-in-out"

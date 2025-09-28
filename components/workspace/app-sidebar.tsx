@@ -41,13 +41,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     },
     {
       title: "Create",
-      url: "/workspace/create",
+      url: "/workspace/projects/create",
       icon: PlusIcon,
       isActive: false,
     },
     {
       title: "Settings",
-      url: "/settings",
+      url: "/workspace/profile",
       icon: GearIcon,
       isActive: false,
     },

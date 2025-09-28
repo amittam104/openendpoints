@@ -14,10 +14,10 @@ import { useTheme } from "next-themes";
 
 export function SiteHeader() {
   const { toggleSidebar } = useSidebar();
-  const { theme: currentTheme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   return (
-    <header className="bg-background sticky top-0 z-50 flex w-full items-center border-b">
+    <header className="fixed bg-background top-0 z-50 flex w-full items-center border-b">
       <div className="flex h-(--header-height) w-full items-center gap-2">
         <div className="flex items-center h-full w-[16rem] border-r border-border">
           <Link
@@ -25,7 +25,7 @@ export function SiteHeader() {
             className="group flex items-center px-3 py-auto h-full border-r border-border hover:bg-accent/50 delay-75 duration-300 ease-in-out"
             aria-label="OpenEndpoints home"
           >
-            {currentTheme === "dark" ? (
+            {theme === "dark" ? (
               <Image
                 src="/logo-dark.svg"
                 alt="OpenEndpoints"
@@ -78,7 +78,7 @@ export function SiteHeader() {
             aria-label="Toggle theme"
             className="px-3 py-auto h-full flex items-center cursor-pointer hover:bg-accent/50 delay-75 duration-300 ease-in-out"
           >
-            {currentTheme === "light" ? (
+            {theme === "light" ? (
               <SunDimIcon size={20} weight="duotone" />
             ) : (
               <MoonIcon size={20} weight="duotone" />

@@ -13,7 +13,7 @@ export default function WorkspaceLayout({
         <SiteHeader />
         <div className="flex flex-1">
           <AppSidebar />
-          <SidebarInset>{children}</SidebarInset>
+          <SidebarInset className="mt-16">{children}</SidebarInset>
         </div>
       </SidebarProvider>
     </div>
