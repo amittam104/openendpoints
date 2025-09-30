@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  HouseIcon,
-  FolderIcon,
-  FileTextIcon,
-  PlusIcon,
-  GearIcon,
-} from "@phosphor-icons/react";
+import { HouseIcon, FolderIcon, GearIcon } from "@phosphor-icons/react";
 import * as React from "react";
 
 import {
@@ -31,25 +25,18 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       title: "Projects",
       url: "/workspace/projects",
       icon: FolderIcon,
-      isActive: false,
-    },
-    {
-      title: "Endpoints",
-      url: "/workspace/endpoints",
-      icon: FileTextIcon,
-      isActive: false,
-    },
-    {
-      title: "Create",
-      url: "/workspace/projects/create",
-      icon: PlusIcon,
-      isActive: false,
+      isActive: true,
+      items: [{ title: "Create Project", url: "/workspace/projects/create" }],
     },
     {
       title: "Settings",
       url: "/workspace/profile",
       icon: GearIcon,
-      isActive: false,
+      isActive: true,
+      items: [
+        { title: "Profile", url: "/settings/profile" },
+        { title: "Workspace", url: "/settings/workspace" },
+      ],
     },
   ];
 

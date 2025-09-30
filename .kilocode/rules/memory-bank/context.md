@@ -2,7 +2,7 @@
 
 ## Current State
 
-The project is in its initial phase. It is a new Next.js application generated with `create-next-app`. The basic setup for authentication with `better-auth` and database with `Prisma` and `MongoDB` is in place. The data models for `Workspace`, `Project`, and `Endpoint` have been implemented in the Prisma schema, and type mismatch issues have been resolved. The UI is the default Next.js starter page.
+The project is in its initial phase. It is a new Next.js application generated with `create-next-app`. The basic setup for authentication with `better-auth` and database with `Prisma` and `MongoDB` is in place. The data models for `Workspace`, `Project`, and `Endpoint` have been implemented in the Prisma schema, and type mismatch issues have been resolved. The create project UI has been implemented following the established design system.
 
 ## Next Steps
 
